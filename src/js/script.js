@@ -85,7 +85,7 @@
       const thisProduct = this;
 
       /* find the clickable trigger (the element that should react to clicking) */
-      const clickableTrigger = select.menuProduct.clickable;
+      const clickableTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
 
       /* START: add event listener to clickable trigger on event click */
       clickableTrigger.addEventListener('click', function (event) {
@@ -93,25 +93,20 @@
         event.preventDefault();
 
         /* find active product (product that has active class) */
-        const activeProduct = document.querySelector(classNames.menuProduct.wrapperActive);
+        const activeProduct = document.querySelector(select.all.menuProductsActive);
         console.log(activeProduct);
 
         /* if there is active product and it's not thisProduct.element, remove class active from it */
-        if (activeProduct) activeProduct.classList.remove('active');
+        if (activeProduct && activeProduct !== thisProduct.element) activeProduct.classList.remove('active');
 
         /* toggle active class on thisProduct.element */
-        thisProduct.element.toggle('active');
+        thisProduct.element.classList.toggle('active');
       });
 
     }
 
   }
 
-  const buttonTest = document.getElementById('button-test');
-
-  buttonTest.addEventListener('click', function () {
-    console.log('clicked');
-  });
 
 
 
