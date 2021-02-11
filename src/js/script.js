@@ -92,6 +92,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion() {
@@ -161,11 +162,13 @@
           if (formData[paramId] && formData[paramId].includes(optionId)) {
             if (!option.default) {
               price = price + option.price;
+
             }
 
           } else {
             if (option.default) {
               price = price - option.price;
+
             }
           }
         }
