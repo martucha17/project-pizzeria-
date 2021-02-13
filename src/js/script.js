@@ -237,7 +237,7 @@
 
       const newValue = parseInt(value);
 
-      if (thisWidget.value !== newValue && !isNaN(newValue) && newValue < settings.amountWidget.defaultMax && newValue > settings.amountWidget.defaultMin) ) {
+      if (thisWidget.value !== newValue && !isNaN(newValue) && newValue < settings.amountWidget.defaultMax && newValue > settings.amountWidget.defaultMin) {
         thisWidget.value = newValue;
 
       }
