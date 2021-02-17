@@ -346,7 +346,8 @@
     initActions() {
       const thisCart = this;
 
-      thisCart.dom.toggleTrigger.addEventListener('click', function () {
+      thisCart.dom.toggleTrigger.addEventListener('click', function (event) {
+        event.preventDefault();
         classNames.cart.wrapperActive(thisCart.dom.wrapper);
       });
 
