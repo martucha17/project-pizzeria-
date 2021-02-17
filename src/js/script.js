@@ -279,6 +279,7 @@
       }
 
       thisWidget.announce();
+      thisWidget.input.value = thisWidget.value;
 
 
 
@@ -338,7 +339,7 @@
 
       thisCart.dom.wrapper = element;
 
-      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTriggeer);
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
 
 
     }
@@ -348,7 +349,7 @@
 
       thisCart.dom.toggleTrigger.addEventListener('click', function (event) {
         event.preventDefault();
-        classNames.cart.wrapperActive(thisCart.dom.wrapper);
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
 
 
