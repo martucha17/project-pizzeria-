@@ -421,7 +421,8 @@
       console.log('adding product', menuProduct);
 
       /* generate HTML based on template */
-      const generatedHTML = thisProduct.productSummary(thisCart.data);
+      const generatedHTML = templates.cartProduct(thisCart.data);
+      
 
       /* create element using utils.createEmelentFromHTML */
       thisCart.element = utils.createDOMFromHTML(generatedHTML);
