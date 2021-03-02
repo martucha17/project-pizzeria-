@@ -289,7 +289,7 @@
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
 
           if (optionSelected) {
-            params[paramId].options[optionId] = option;
+            params[paramId].options[optionId] = option.label;
 
           }
 
@@ -421,14 +421,14 @@
       console.log('adding product', menuProduct);
 
       /* generate HTML based on template */
-      const generatedHTML = templates.cartProduct(thisCart.data);
+      const generatedHTML = templates.cartProduct(menuProduct);
       
 
       /* create element using utils.createEmelentFromHTML */
-      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
       /* add element to menu */
-      thisCart.dom.productList.appendChild(thisCart.element);
+      thisCart.dom.productList.appendChild(generatedDOM);
 
 
     }
