@@ -493,7 +493,7 @@
       const index = thisCart.products.indexOf(cartProduct);
       thisCart.products.splice(index, 1);
 
-
+      cartProduct.dom.wrapper.remove();
 
 
       thisCart.update();
@@ -618,7 +618,7 @@
           console.log('parsedResponse', parsedResponse);
 
           /* save parsedResponse as thisApp.data.products */
-          thisApp.data.product = thisApp.parsedResponse;
+          thisApp.data.products = parsedResponse;
 
 
           /* execute initMenu method */
