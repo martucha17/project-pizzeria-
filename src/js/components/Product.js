@@ -1,5 +1,6 @@
-import {select, classNames, templates, utils} from './settings.js';
-import AmountWidget from './components/AmountWidget.js';
+import { select, classNames, templates } from '../settings.js';
+import AmountWidget from './AmountWidget.js';
+/* global utils */
 
 class Product {
   constructor(id, data) {
@@ -229,4 +230,4 @@ export default Product;
 
 
 
-  
+
