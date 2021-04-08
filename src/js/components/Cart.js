@@ -12,7 +12,6 @@ class Cart {
     thisCart.getElements(element);
     thisCart.initActions();
 
-    console.log('new Cart', thisCart);
   }
 
   getElements(element) {
@@ -74,7 +73,6 @@ class Cart {
     thisCart.dom.productList.appendChild(generatedDOM);
 
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
-    console.log('thisCart.products', thisCart.products);
 
     thisCart.update();
 

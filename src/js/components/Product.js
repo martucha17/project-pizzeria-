@@ -16,7 +16,6 @@ class Product {
     thisProduct.initAmountWidget();
     thisProduct.processOrder();
 
-    console.log('new Product:', thisProduct);
   }
 
   renderInMenu() {
@@ -52,20 +51,14 @@ class Product {
 
   initAccordion() {
     const thisProduct = this;
-
-    /* START: add event listener to clickable trigger on event click */
+ 
     thisProduct.accordionTrigger.addEventListener('click', function (event) {
-      /* prevent default action for event */
       event.preventDefault();
 
-      /* find active product (product that has active class) */
       const activeProduct = document.querySelector(select.all.menuProductsActive);
-      console.log(activeProduct);
 
-      /* if there is active product and it's not thisProduct.element, remove class active from it */
       if (activeProduct && activeProduct !== thisProduct.element) activeProduct.classList.remove('active');
-
-      /* toggle active class on thisProduct.element */
+ 
       thisProduct.element.classList.toggle('active');
     });
 
@@ -73,7 +66,6 @@ class Product {
 
   initOrderForm() {
     const thisProduct = this;
-    console.log('initOrderForm');
     thisProduct.form.addEventListener('submit', function (event) {
       event.preventDefault();
       thisProduct.processOrder();
@@ -95,26 +87,17 @@ class Product {
 
   processOrder() {
     const thisProduct = this;
-    console.log('processOrder');
 
     const formData = utils.serializeFormToObject(thisProduct.form);
-    console.log('formData', formData);
 
-    // set price to default price
     let price = thisProduct.data.price;
 
-    // for every category (param)...
     for (let paramId in thisProduct.data.params) {
-      // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
       const param = thisProduct.data.params[paramId];
-      console.log(paramId, param);
-
-      // for every option in this category
+      
       for (let optionId in param.options) {
-        // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
         const option = param.options[optionId];
-        console.log(optionId, option);
-
+       
         if (formData[paramId] && formData[paramId].includes(optionId)) {
           if (!option.default) {
             price = price + option.price;
@@ -144,7 +127,6 @@ class Product {
     thisProduct.priceSingle = price;
     thisProduct.price = thisProduct.priceSingle * thisProduct.amountWidget.value;
 
-    // update calculated price in the HTML
     thisProduct.priceElem.innerHTML = price;
 
   }

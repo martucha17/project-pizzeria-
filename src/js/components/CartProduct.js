@@ -17,7 +17,7 @@ class CartProduct {
     thisCartProduct.initCartAmountWidget();
     thisCartProduct.initActions();
 
-    console.log('thisCartProduct', thisCartProduct);
+    
 
 
   }
@@ -63,7 +63,7 @@ class CartProduct {
       },
     });
     thisCartProduct.dom.wrapper.dispatchEvent(event);
-    console.log('removeProduct', thisCartProduct);
+    
 
   }
 
