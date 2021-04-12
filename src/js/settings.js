@@ -32,7 +32,7 @@ export const select = {
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
-    atePicker: {
+    datePicker: {
       wrapper: '.date-picker',
       input: `input[name="date"]`,
     },
