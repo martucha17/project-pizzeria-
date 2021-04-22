@@ -72,7 +72,10 @@ export const select = {
     activeTable: '.table.selected',
     phone: '[name="phone"]',
     address: '[name="address"]',
-    form: '.order-confirmation'
+    form: '.booking-form',
+    starters: 'input[name="starter"]',
+    peopleAmountInput: 'input[name="people"]',
+    durationInput: 'input[name="hours"]'
 
   },
   nav: {
@@ -145,6 +148,6 @@ export const templates = {
 
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
 
-  home:  Handlebars.compile(document.querySelector(select.templateOf.home).innerHTML),
+  home: Handlebars.compile(document.querySelector(select.templateOf.home).innerHTML),
 
 };

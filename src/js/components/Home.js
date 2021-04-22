@@ -1,21 +1,21 @@
 import { templates } from '../settings.js';
 
 class Home {
-    constructor(wrapper) {
-        const thisHome = this;
+  constructor(wrapper) {
+    const thisHome = this;
 
-        thisHome.render(wrapper);
-    }
+    thisHome.render(wrapper);
+  }
 
-    render(wrapper) {
-        const thisHome = this;
+  render(wrapper) {
+    const thisHome = this;
 
-        const generatedHTML = templates.home();
+    const generatedHTML = templates.home();
 
-        thisHome.dom = {};
-        thisHome.dom.wrapper = wrapper;
+    thisHome.dom = {};
+    thisHome.dom.wrapper = wrapper;
 
-        wrapper.innerHTML = generatedHTML;
-    }
+    wrapper.innerHTML = generatedHTML;
+  }
 }
 export default Home;

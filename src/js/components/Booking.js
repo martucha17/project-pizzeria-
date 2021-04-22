@@ -115,6 +115,7 @@ class Booking {
       }
 
       thisBooking.booked[date][hourBlock].push(table);
+      thisBooking.booked[date][hourBlock].push(thisBooking.sendBooking.payload);
 
     }
   }
@@ -181,15 +182,18 @@ class Booking {
     const url = settings.db.url + '/' + settings.db.booking;
 
     const payload = {
-      date: thisBooking.dom.datePicker.value,
-      hour: thisBooking.dom.hourPicker.value,
-      table: null,
-      duration: thisBooking.dom.hoursAmount.value,
-      ppl: thisBooking.dom.peopleAmount.value,
+      date: thisBooking.dom.dateInput.value,
+      hour: utils.numberToHour(thisBooking.dom.hourInput.value),
+      table: thisBooking.selectedTable,
+      duration: thisBooking.dom.durationInput.value,
+      ppl: thisBooking.dom.peopleAmountInput.value,
       phone: thisBooking.dom.phone.value,
       address: thisBooking.dom.address.value,
       starters: []
     };
+    for (const starter of thisBooking.dom.starters) {
+      if (starter.checked) payload.starters.push(starter.value);
+    }
 
     console.log(payload);
 
@@ -207,6 +211,8 @@ class Booking {
       }).then(function (parsedResponse) {
         console.log('parsedresponse', parsedResponse);
       });
+
+
 
   }
 
@@ -232,6 +238,13 @@ class Booking {
     thisBooking.dom.phone = thisBooking.dom.wrapper.querySelector(select.booking.phone);
     thisBooking.dom.address = thisBooking.dom.wrapper.querySelector(select.booking.address);
     thisBooking.dom.form = thisBooking.dom.wrapper.querySelector(select.booking.form);
+    thisBooking.dom.starters = thisBooking.dom.wrapper.querySelectorAll(select.booking.starters);
+    thisBooking.dom.dateInput = thisBooking.dom.wrapper.querySelector(select.widgets.datePicker.input);
+    thisBooking.dom.hourInput = thisBooking.dom.wrapper.querySelector(select.widgets.hourPicker.input);
+    thisBooking.dom.peopleAmountInput = thisBooking.dom.wrapper.querySelector(select.booking.peopleAmountInput);
+    thisBooking.dom.durationInput = thisBooking.dom.wrapper.querySelector(select.booking.durationInput);
+
+
 
 
   }
