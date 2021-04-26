@@ -115,8 +115,7 @@ class Booking {
       }
 
       thisBooking.booked[date][hourBlock].push(table);
-      thisBooking.booked[date][hourBlock].push(thisBooking.sendBooking.payload);
-
+      
     }
   }
 
@@ -212,7 +211,7 @@ class Booking {
         console.log('parsedresponse', parsedResponse);
       });
 
-
+    thisBooking.makeBooked();
 
   }
 

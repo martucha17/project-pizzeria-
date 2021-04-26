@@ -15,6 +15,7 @@ export const select = {
     pages: '#pages',
     booking: '.booking-wrapper',
     home: '.home-wrapper',
+    carousel: '.carousel',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -76,7 +77,10 @@ export const select = {
     starters: 'input[name="starter"]',
     peopleAmountInput: 'input[name="people"]',
     durationInput: 'input[name="hours"]'
-
+  },
+  home: {
+    goOrder: '.go-order',
+    goBook: '.go-book',
   },
   nav: {
     links: '.main-nav a',
@@ -128,7 +132,7 @@ export const settings = {
     tableIdAttribute: 'data-table',
   },
   db: {
-    url: '//localhost:3131',
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
     product: 'product',
     order: 'order',
     booking: 'booking',
@@ -147,7 +151,5 @@ export const templates = {
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
 
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
-
-  home: Handlebars.compile(document.querySelector(select.templateOf.home).innerHTML),
 
 };

@@ -1,21 +1,30 @@
-import { templates } from '../settings.js';
-
 class Home {
-  constructor(wrapper) {
+  constructor() {
     const thisHome = this;
 
-    thisHome.render(wrapper);
+    thisHome.initActions();
   }
 
-  render(wrapper) {
+  initActions() {
     const thisHome = this;
 
-    const generatedHTML = templates.home();
+    thisHome.goOrder = document.querySelector('.go-order');
+    console.log(thisHome.goOrder);
+    thisHome.orderLink = document.querySelector('.order-link');
+    console.log(thisHome.orderLink);
+    
 
-    thisHome.dom = {};
-    thisHome.dom.wrapper = wrapper;
 
-    wrapper.innerHTML = generatedHTML;
+
+    thisHome.goOrder.addEventListener('click', function (event) {
+      event.preventDefault();
+      thisHome.orderLink.classList.add('.active');
+      window.location= "http://localhost:3000/#/order";
+    });
+
+
   }
+
+
 }
 export default Home;

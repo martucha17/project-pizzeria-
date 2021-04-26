@@ -10,6 +10,7 @@
     rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,9 +26,8 @@
         </div>
         <div class="main-nav">
           <a href="#home">Home</a>
-          <a href="#order">Order</a>
-          <a href="#booking">Booking</a>
-          </a>
+          <a href="#order" class="order-link">Order</a>
+          <a href="#booking" class="booking-link">Booking</a>
         </div>
         <div id="cart" class="cart">
           <div class="cart__summary">
@@ -69,8 +69,111 @@
   <div id="pages">
     <section id="home">
       <div class="home-wrapper container">
-
-      </div>
+        <div class="action-boxes">
+          <div class="action-box go-order">
+            <img class="action-img" src="images/pizza-1.jpg">
+            <div class="action-txt">
+              <a class="first-txt">ORDER ONLINE</a>
+              <a class="second-txt">Delicious food delivered to your door</a>
+            </div>
+          </div>
+          <div class="action-box">
+            <img class="action-img go-book" src="images/pizza-2.jpg">
+            <div class="action-txt">
+              <a class="first-txt">BOOK A TABLE</a>
+              <div class="second-txt">Come to us with your friends!</div>
+            </div>
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-title">OPENING HOURS</div>
+          <div class="info-box-schedule">TUE-SUN, 12PM - 12AM</div>
+        </div>
+        <div class="carousel" data-flickity='{ "cellAlign": "left", "contain": true, "autoPlay": true }'>
+          <div class="carousel-cell">
+            <div class="carousel-image">
+              <img class="carousel-image" src="images/pizza-3.jpg">
+            </div>
+            <div class="carousel-opinion">
+              <h1 class="opinion-title">AMAZING SERVICE!</h1>
+              <h2 class="opinion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</h2>
+              <a class="opinion-person">- Jan Kowalski</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="carousel-image">
+              <img class="carousel-image" src="images/pizza-3.jpg">
+            </div>
+            <div class="carousel-opinion">
+              <h1 class="opinion-title">GREAT FOOD!</h1>
+              <h2 class="opinion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</h2>
+              <a class="opinion-person">- Jan Kowalski</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="carousel-image">
+              <img class="carousel-image" src="images/pizza-3.jpg">
+            </div>
+            <div class="carousel-opinion">
+              <h1 class="opinion-title">LOVELY PLEACE!</h1>
+              <h2 class="opinion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</h2>
+              <a class="opinion-person">- Jan Kowalski</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="photos">
+            <img class="img" src="images/pizza-4.jpg">
+            <div class="icons">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="photos">
+            <img class="img" src="images/pizza-5.jpg">
+            <div class="icons">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="photos">
+            <img class="img" src="images/pizza-6.jpg">
+            <div class="icons">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="photos">
+            <img class="img" src="images/pizza-7.jpg">
+            <div class="icons">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="photos">
+            <img class="img" src="images/pizza-8.jpg">
+            <div class="icons">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="photos">
+            <img class="img" src="images/pizza-9.jpg">
+            <div class="icons">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <a href="#">View more on Instagram</a>
+        </div>
     </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
@@ -79,30 +182,6 @@
       <div class="booking-wrapper container"></div>
     </section>
   </div>
-
-  <script id="template-home" type="text/x-handlebars-template">
-    <div class="action-boxes">
-      <button>Order online</button>
-      <button>Book a table</button>
-
-    </div>
-    <div class="info-box">
-      <h1>Opening Hours</h1>
-      <h3>Tue-Sun, 12PM - 12AM</h3>
-
-    </div>
-    <div class="opinions-carousel">
-
-    </div>
-    <div class="photos">
-
-    </div>
-    <div class="foot">
-      <a href="#">View more on Instagram</a>
-    </div>
-
-  </script>
-
   <script id="template-booking-widget" type="text/x-handlebars-template">
     <div class="booking-widget">
       <h2 class="page__title no-spacing">Book a table</h2>
@@ -278,6 +357,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="vendor/range-slider.min.js"></script>
   <script src="js/app.js" type="module"></script>
   <script src="js/utils.js"></script>
