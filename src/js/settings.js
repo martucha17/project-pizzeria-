@@ -83,10 +83,7 @@ export const select = {
     goBooking: '.go-booking',
   },
   nav: {
-    links: '.main-nav a',
-    orderLink: '[href="#order"]',
-    bookingLink: '[href="#boking"]',
-    homeLink: '[href="#home"]',
+    links: '.main-nav a, .action-box',
   },
 
 };

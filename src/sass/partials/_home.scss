@@ -7,68 +7,67 @@
 }
 
 .action-boxes {
-  display: flex;
   width: 625px;
   height: 100px;
-  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 40px;
+  padding-right: 5px;
+
 }
 
 .action-box {
   width: 300px;
-  height: 100px;
-  position: relative;
-  margin: 10px;
-  flex-direction: row;
+  height: 119px;
+  border-radius: 4px;
+  background-color: #000000;
+  display: block;
+  text-decoration: none;
 }
 
-.action-img {
+.action-photo {
   width: 300px;
-  height: 100px;   
+  height: 119px;
 }
 
-.action-txt {
-  text-align: center;
+.action-box p {
+  transform: translateY(-95px);
 }
 
 .first-txt {
-  display: block;
+  width: 300px;
+  height: 38px;
   font-size: 26px;
   letter-spacing: -1px;
   color: #ffffff;
   font-weight: 700;
   font-family: "Oswald";
   text-align: center;
-  transform: translate(0,-70px);
-
+  margin: 5px;
 }
 
 .second-txt {
-  display: none;
-  font-size: 16px;
-  color: #ffffff;
   text-align: center;
-  transform: translateY(-70px);
-  transition-duration: 3s;
+  color: #ffffff;
+  margin: 5px;
+  display: none;
 }
 
 .action-box:hover .second-txt {
   display: block;
-  transform: translateY(-100px);
+  
 }
 
 .action-box:hover .first-txt {
-  transform: translateY(-100px);
-}
-
-.flickity-button:disabled {
-  display: none;
+  transform: translateY(-105px);
 }
 
 .info-box {
   width: 620px;
   height: 100px;
   background-color: #ff6b6b;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: 20px;
   margin-bottom: 20px;
   padding: 15px;
@@ -150,12 +149,12 @@
   position: relative;
   width: 193px;
   height: 193px;
-  transition-duration: 4s;
 }
 
 .img {
   width: 193px;
   height: 193px;
+  transition: 1s;
 }
 
 .foot {
@@ -178,12 +177,14 @@
   font-size: 25px;
   right: 65px;
   display: none;
-    
+}
+
+.fas {
+  transition: 1s;
 }
 
 .photos:hover .icons {
-  display: block;
-    
+  display: block;    
 }
 
 .photos:hover .img {
