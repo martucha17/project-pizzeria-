@@ -1,1 +1,1 @@
-https://git.heroku.com/enigmatic-everglades-84332.git
+https://enigmatic-everglades-84332.herokuapp.com/
